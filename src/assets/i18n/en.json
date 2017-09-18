@@ -1,0 +1,24 @@
+{
+  "menus": {
+    "dashboard": "Dashboard",
+    "grid-page": "DataListPage",
+    "form-page": "Form"
+  },
+  "buttons": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "batch-add": "BatchAdd",
+    "batch-edit": "BatchEdit",
+    "batch-delete": "BatchDelete"
+  },
+  "demo": {
+    "form": {
+      "title": "Form Demo",
+      "required": "Required",
+      "submit": "Submit",
+      "name": "Name",
+      "age": "Age"
+    }
+  }
+}

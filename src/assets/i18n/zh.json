@@ -1,0 +1,24 @@
+{
+  "menus": {
+    "dashboard": "控制台",
+    "grid-page": "数据列表",
+    "form-page": "表单"
+  },
+  "buttons": {
+    "add": "添加",
+    "edit": "修改",
+    "delete": "删除",
+    "batch-add": "批量添加",
+    "batch-edit": "批量修改",
+    "batch-delete": "批量删除"
+  },
+  "demo": {
+    "form": {
+      "title": "表单演示",
+      "required": "必填",
+      "submit": "提交",
+      "name": "名字",
+      "age": "年龄"
+    }
+  }
+}

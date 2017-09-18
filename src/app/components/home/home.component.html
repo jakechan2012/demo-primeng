@@ -1,0 +1,19 @@
+<div id="layout-topbar">
+  <div class="logo">Tab Admin Demo</div>
+  <div class="language" (mouseenter)="op.show($event);clearHideLangPanel()" (mouseleave)="hideLangPanel(op)">
+    <i class="fa fa-globe"></i> {{languageLabel}}
+  </div>
+  <p-overlayPanel (mouseenter)="clearHideLangPanel()" (mouseleave)="hideLangPanel(op)" #op>
+    <p-listbox [style]="{'width': '80px'}" [options]="languages" [(ngModel)]="language" (ngModelChange)="setLang()"></p-listbox>
+  </p-overlayPanel>
+</div>
+<div id="layout-sidebar">
+  <p-panelMenu class="layout-menu" [model]="menuItems"></p-panelMenu>
+</div>
+<div id="layout-content">
+  <p-tabView (onChange)="onTabChange($event)" (onClose)="onTabClose($event)">
+    <p-tabPanel *ngFor="let tab of tabs" [header]="tab.route|translate" [selected]="tab.route===currentTabRoute" [closable]="tab.route!=='menus.dashboard'">
+      <tab-tpl [tab]="tab.component"></tab-tpl>
+    </p-tabPanel>
+  </p-tabView>
+</div>

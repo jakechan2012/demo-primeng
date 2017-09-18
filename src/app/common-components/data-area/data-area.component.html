@@ -1,0 +1,5 @@
+<p-dataTable [value]="content.data" [rows]="rows" [selectionMode]="selectionMode" [rowsPerPageOptions]="[5,10,20,50,100]"
+  [(selection)]="selection" resizableColumns="true" paginator="true" pageLinks="5" responsive="true">
+  <p-header>{{content.title}}</p-header>
+  <p-column *ngFor="let col of content.cols" [sortable]="true" [field]="col.field" [header]="col.header"></p-column>
+</p-dataTable>

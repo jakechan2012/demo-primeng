@@ -1,0 +1,47 @@
+<div class="ui-g">
+  <div class="ui-g-6">
+    <p-panel [header]="'demo.form.title'|translate">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              {{'demo.form.name'|translate}} *:
+            </div>
+            <div class="ui-grid-col-10">
+              <input pInputText type="text" formControlName="name" [placeholder]="'demo.form.required'|translate">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2">
+              {{'demo.form.age'|translate}} *:
+            </div>
+            <div class="ui-grid-col-10">
+              <input pInputText type="text" formControlName="age" [placeholder]="'demo.form.required'|translate">
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2"></div>
+            <div class="ui-grid-col-10">
+              <p-autoComplete formControlName="user" [suggestions]="filteredUsers" (completeMethod)="filterUsers($event)" [size]="30" [minLength]="1"
+                placeholder="选择后将显示性别" [dropdown]="true" (onDropdownClick)="handleDropdownClick($event)" field="gender">
+                <ng-template let-user pTemplate="item">
+                  <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+                    <div style="font-size:18px;float:left;margin:10px 10px 0 0">{{user.name}}</div>
+                    <div style="font-size:18px;float:left;margin:10px 10px 0 0">{{user.age}}</div>
+                    <div style="font-size:18px;float:left;margin:10px 10px 0 0">{{user.gender}}</div>
+                  </div>
+                </ng-template>
+              </p-autoComplete>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-2"></div>
+            <div class="ui-grid-col-10">
+              <button pButton type="submit" [label]="'submit'|translate" [disabled]="!userForm.valid"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </p-panel>
+  </div>
+</div>
